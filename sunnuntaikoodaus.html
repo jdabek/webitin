@@ -1,8 +1,9 @@
 <html>
 <head>
+
 <script>
 function getDistance(elementId) {
-  return  document.getElementById(elementId).value; 
+  return document.getElementById(elementId).value; 
 }
 function setDistance(elementId, number) {
   document.getElementById(elementId).value = number.toString();
@@ -10,20 +11,28 @@ function setDistance(elementId, number) {
 function convertKmsToMiles(distance) {
   return distance / 1.609344;
 }
-function applyConversion() {
+function applyConversionKmsToMiles() {
   var kms = getDistance("kilometrit");
   var miles = convertKmsToMiles(kms);
   setDistance("mailit", miles)
+}  
+function convertMilesToKms(distance) {
+  return distance * 1.609344;
 }
-
+function applyConversionMilesToKms() {
+  var miles = getDistance("mailit");
+  var kms = convertMilesToKms(miles);
+  setDistance("kilometrit", kms)
+}
 </script>
+
 <meta charset="utf-8" />
 <title>Sunnuntaikoodaus</title>
 </head>
 <body>
 
 <h1>Sunnuntaikoodaus</h1>
-<img src="Kalorit.jpg" alt="kuva"/> 
+<img src="Kalorit.jpg" alt="kuva"/>
 <p>Koko homman pointit:</p>
 
 <ul>
@@ -33,13 +42,13 @@ function applyConversion() {
 <li>Tätä listaa ja koko tiedostoa saa päivittää!</li>
 </ul>
 
-<h2>Blinit</h2>
+<h2>We did it</h2>
 
 <p>Etäisyyksienhallinta:</p>
 
 <input id="kilometrit" type="text" /> kilometriä<br />
-<input id="kilometrinappi" type="button" value="Kilometrit maileiksi" onclick="applyConversion();" /> &gt;&gt;&gt;<br />
-<input id="mailinappi" type="button" value="Mailit kilometreiksi" onclick="applyConversion();" /> &lt;&lt;&lt;<br />
+<input id="kilometrinappi" type="button" value="Kilometrit maileiksi" onclick="applyConversionKmsToMiles();" /> &gt;&gt;&gt;<br />
+<input id="mailinappi" type="button" value="Mailit kilometreiksi" onclick="applyConversionMilesToKms();" /> &lt;&lt;&lt;<br />
 <input id="mailit" type="text" /> mailia<br />
 
 </body>
