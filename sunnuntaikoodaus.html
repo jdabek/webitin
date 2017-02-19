@@ -2,17 +2,20 @@
 <head>
 <script>
 function getDistance(elementId) {
-
+  return  document.getElementById(elementId).value; 
 }
-function setDistance(elementId) {
-
+function setDistance(elementId, number) {
+  document.getElementById(elementId).value = number.toString();
 }
-function convertDistance(distance, reverseKMToMI) {
-
+function convertKmsToMiles(distance) {
+  return distance / 1.609344;
 }
 function applyConversion() {
-
+  var kms = getDistance("kilometrit");
+  var miles = convertKmsToMiles(kms);
+  setDistance("mailit", miles)
 }
+
 </script>
 <meta charset="utf-8" />
 <title>Sunnuntaikoodaus</title>
