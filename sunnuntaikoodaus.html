@@ -17,6 +17,27 @@ function applyConversion() {
 }
 
 </script>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  min-width: 600px;
+  width: 50%;
+  margin: 0 auto;
+  padding: 2%;
+  color: #847;
+}
+a:link, a:visited, a:active {
+  text-decoration: none;
+  color: #00f;
+  font-weight: bold;
+}
+a:hover {
+  color: #f0f;
+}
+.no-effect:hover {
+  color: #000;
+}
+</style>
 <meta charset="utf-8" />
 <title>Sunnuntaikoodaus</title>
 </head>
@@ -35,7 +56,9 @@ function applyConversion() {
 
 <h2>Blinit</h2>
 
-<p>Etäisyyksienhallinta:</p>
+<p>Blinejä on käytetty kautta aikain ankarina talvikuukausina riittävän rasvansaannin turvaajina. On sanomattakin selvää, että niillä pystyy kulkemaan pitkän matkan. Olemmekin tätä tarkoitusta varten laatineet seuraavan mittarin <a href="#etaisyys">etäisyyksienhallintaan</a>. Eli kun syötät kulkemasi kilometrit, näet etäisyyden maileissa. Tai päinvastoin. Näiden asioiden välinen yhteys lienee hieman abstrakti, mutta kilometrit ja mailit muuttuvat toisikseen ihan säädyllisesti.</p>
+
+<a name="etaisyys" class="no-effect"><p>Etäisyyksienhallinta:</p></a>
 
 <input id="kilometrit" type="text" /> kilometriä<br />
 <input id="kilometrinappi" type="button" value="Kilometrit maileiksi" onclick="applyConversion();" /> &gt;&gt;&gt;<br />
