@@ -10,10 +10,18 @@ function setDistance(elementId, number) {
 function convertKmsToMiles(distance) {
   return distance / 1.609344;
 }
-function applyConversion() {
+function applyConversionKmsToMiles() {
   var kms = getDistance("kilometrit");
   var miles = convertKmsToMiles(kms);
   setDistance("mailit", miles)
+}  
+function convertMilesToKms(distance) {
+  return distance * 1.609344;
+}
+function applyConversionMilesToKms() {
+  var miles = getDistance("mailit");
+  var kms = convertMilesToKms(miles);
+  setDistance("kilometrit", kms)
 }
 
 </script>
@@ -38,8 +46,8 @@ function applyConversion() {
 <p>Etäisyyksienhallinta:</p>
 
 <input id="kilometrit" type="text" /> kilometriä<br />
-<input id="kilometrinappi" type="button" value="Kilometrit maileiksi" onclick="applyConversion();" /> &gt;&gt;&gt;<br />
-<input id="mailinappi" type="button" value="Mailit kilometreiksi" onclick="applyConversion();" /> &lt;&lt;&lt;<br />
+<input id="kilometrinappi" type="button" value="Kilometrit maileiksi" onclick="applyConversionKmsToMiles();" /> &gt;&gt;&gt;<br />
+<input id="mailinappi" type="button" value="Mailit kilometreiksi" onclick="applyConversionMilesToKms();" /> &lt;&lt;&lt;<br />
 <input id="mailit" type="text" /> mailia<br />
 
 </body>
